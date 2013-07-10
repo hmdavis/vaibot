@@ -1,4 +1,3 @@
-
 vaibot
 ==================
 
@@ -15,6 +14,10 @@ The best NYC tech intern
 - Change the settings in the `runbot.sh` file to match your situation
 - Run the Bot: `. runbot.sh`
 
+
 ## Some Resources
+- [Hubot](https://github.com/github/hubot)
 - [Hubot Tutorial](http://net.tutsplus.com/tutorials/javascript-ajax/writing-hubot-plugins-with-coffeescript/)
 - [CoffeeScript Reference](http://coffeescript.org/#top)
+
+
