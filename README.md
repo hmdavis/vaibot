@@ -1,7 +1,9 @@
-hubot-irc-runnable
+
+
+vaibot
 ==================
 
-A pre-packaged runnable version of the [hubot-irc](https://github.com/nandub/hubot-irc) adapter.
+The best NYC tech intern 
 
 ## Dependencies
 
@@ -10,15 +12,6 @@ A pre-packaged runnable version of the [hubot-irc](https://github.com/nandub/hub
 
 ## Setup
 
-- Clone this repo or download the [latest tag](https://github.com/jgable/hubot-irc-runnable/tags).
 - Install dependencies: `npm install`
 - Change the settings in the `runbot.sh` file to match your situation
 - Run the Bot: `. runbot.sh`
-
-If the `runbot.sh` file is not executable you can change the execute permissions with
-    
-    chmod 755 runbot.sh
-
-## License
-
-MIT License, available via a quick google search if needed.
