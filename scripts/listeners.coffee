@@ -1,5 +1,5 @@
 # Description:
-#   Custom listeners
+#   Custom listeners for our dearest
 #
 # Dependencies:
 #   None
@@ -14,15 +14,26 @@
 #   Harry
 
 URL = "#{process.env.HUBOT_SPOT_URL}"
-INTERNS = /(interns.*)/i
+DISS = /(hubes (insult)|(kill) vaibot)/i
+KILL = /vaibot die/i
+QUIET = /.*/
+
+quiet_count = 0 
 
 module.exports = (robot) ->
 	
-	robot.hear INTERNS, (msg) ->
-		#user = msg.message.user.name
-        msg.send("i dont know something adorable")
-		#if (user is "tchen_") 
-			#msg.send("SHUT UP TOMMY") 
-		#else
-			#msg.send("I like " + user + " more than Tommy") 
-  
+	robot.hear DISS, (msg) ->
+		user = msg.message.user.name
+		msg.send("Seriously " + user + "? You leave me no choice.")
+		msg.send("It hurts me to do this...")
+		msg.send("hubes die")
+
+	robot.hear QUIET, (msg) -> 
+		user = msg.message.user.name
+		quiet_count = (quiet_count + 1)
+		if (quiet_count%30 == 0) 
+			msg.send("Can we keep it down please?")
+		else if (quiet_count%54 == 0) 
+			msg.send("Please quiet " + user + ", I'm trying to concentrate.")
+		else if (quiet_count%61 == 0) 
+			msg.send(user + " please shut up I've asked nicely.")
