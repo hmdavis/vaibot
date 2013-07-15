@@ -14,14 +14,15 @@
 #   Harry
 
 URL = "#{process.env.HUBOT_SPOT_URL}"
-TEST = /(tommy.*)/i
+INTERNS = /(interns.*)/i
 
 module.exports = (robot) ->
 	
-	robot.hear TEST, (msg) ->
-		user = msg.message.user.name
-		if (user is "tchen_") 
-			msg.send("SHUT UP TOMMY") 
-		else
-			msg.send("I like " + user + " more than Tommy") 
+	robot.hear INTERNS, (msg) ->
+		#user = msg.message.user.name
+        msg.send("i dont know something adorable")
+		#if (user is "tchen_") 
+			#msg.send("SHUT UP TOMMY") 
+		#else
+			#msg.send("I like " + user + " more than Tommy") 
   
