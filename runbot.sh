@@ -3,7 +3,7 @@
 
 # Set Environment Variables
 export HUBOT_IRC_NICK=vaibot
-export HUBOT_IRC_SERVER=
+export HUBOT_IRC_SERVER=irc.ebay.com
 export HUBOT_IRC_ROOMS="#interns"
 #export HUBOT_IRC_ROOMS="#test"
 
