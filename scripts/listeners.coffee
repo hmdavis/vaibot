@@ -13,12 +13,14 @@
 # Author:
 #   Harry
 
-URL = "#{process.env.HUBOT_SPOT_URL}"
 DISS = /(hubes (insult)|(kill) vaibot)/i
 KILL = /vaibot die/i
 SHEENA = /sheena|sheena1|merf|murf/i
+TARIK = /tarik me (.*)/i
+VB = /vaibhav me (.*)/i
+PONG = /vaibot pong/i
 
-merf =0 
+merf = 0 
 
 module.exports = (robot) ->
 	
@@ -30,7 +32,20 @@ module.exports = (robot) ->
 
 	robot.hear SHEENA, (msg) -> 
 		merf = (merf + 1) 
-		if (quiet_count%2 == 0)
+		if (merf%2 == 0)
 			msg.send("MERF!")
 		else 
 			msg.send("sheena the masheena!")
+
+	robot.hear TARIK, (msg) ->
+		phrase = msg.match[1]
+		tolike = () -> if Math.random() < .25 then " like, " else " "
+		phrase = phrase.replace /[\s]/g, tolike
+		phrase = phrase.replace /([^a-zA-Z1-9]$)/, " man!"
+		msg.send(phrase + ", man!")  
+
+	robot.hear VB, (msg) -> 
+		msg.send("I'm Vaibhav and I suck at everything!")
+
+	robot.hear PONG, (msg) -> 
+		msg.send("PING")
