@@ -42,7 +42,7 @@ module.exports = (robot) ->
 		tolike = () -> if Math.random() < .25 then " like, " else " "
 		phrase = phrase.replace /[\s]/g, tolike
 		phrase = phrase.replace /([^a-zA-Z1-9]$)+/, " man!"
-		msg.send(phrase + ", man!")  
+		msg.send("Sir, " + phrase + ", man!")  
 
 	robot.hear VB, (msg) -> 
 		msg.send("I'm Vaibhav and I suck at everything!")
