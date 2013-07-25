@@ -38,10 +38,10 @@ module.exports = (robot) ->
 			msg.send("sheena the masheena!")
 
 	robot.hear TARIK, (msg) ->
-		phrase = msg.match[1]
+		phrase = msg.match[1].replace /([^a-zA-Z1-9]+$)/, ""
 		tolike = () -> if Math.random() < .25 then " like, " else " "
 		phrase = phrase.replace /[\s]/g, tolike
-		phrase = phrase.replace /([^a-zA-Z1-9]$)/, " man!"
+		phrase = phrase.replace /([^a-zA-Z1-9]$)+/, " man!"
 		msg.send(phrase + ", man!")  
 
 	robot.hear VB, (msg) -> 
