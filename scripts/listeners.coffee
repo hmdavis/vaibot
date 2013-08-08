@@ -15,9 +15,10 @@
 
 DISS = /(hubes (insult)|(kill) vaibot)/i
 KILL = /vaibot die/i
-SHEENA = /sheena|sheena1|merf|murf/i
+SHEENA = /sheena|sheena1|m+[eu]+r+f+|murf/i
 TARIK = /tarik me (.*)/i
 VB = /vaibhav me (.*)/i
+TOM = /tommy me (.*)/i
 PONG = /vaibot pong/i
 
 merf = 0 
@@ -46,6 +47,14 @@ module.exports = (robot) ->
 
 	robot.hear VB, (msg) -> 
 		msg.send("I'm Vaibhav and I suck at everything!")
+
+	robot.hear TOM,(msg) -> 
+		phrase = msg.match[1]
+		phrase = phrase.replace /(le)\s+/ig, "o "
+		phrase = phrase.replace /(les)\s+/ig, "os "
+		phrase = phrase.replace /(le)$/ig, "o"
+		phrase = phrase.replace /(les)$/ig, "os"
+		msg.send(phrase)
 
 	robot.hear PONG, (msg) -> 
 		msg.send("PING")
